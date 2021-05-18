@@ -71,25 +71,28 @@
 		3. che age sia un numero.
 		Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 	-->
+	<h1>SANCK 1 - ELENCO PARTITE</h1>
 
 		<?php
-		$name = $_GET['name'];
-		$email = $_GET['mail'];
-		$age = $_GET['age'];
+			$name = $_GET['name'];
+			$email = $_GET['email'];
+			$age = $_GET['age'];
 
-		if ( empty($name) || empty($email) || empty($age) )	{
-			echo "Errore, nessun parametro indicato";
-		}
-		else if ( strpos($name, '@') === false || strpos($name, '.' ) === false ) {
-			echo "Accesso negato ";
-		}
-		else {
-			echo "Accesso eseguito";
-		}
+			if ( empty($name) || empty($email) || empty($age) )	{
+				echo "Errore, nessun parametro indicato";
+			}
+			else if ( 
+				(strlen($name) <= 3) ||
+				(strpos($email, '@') === false || strpos($email, '.' ) === false) ||
+				!is_numeric($age)
+				) 
+			{
+				echo "Accesso negato ";
+			}
+			else {
+				echo "Accesso eseguito";
+			}
 		?>
-
-
-
 	</section>
 </body>
 </html>
