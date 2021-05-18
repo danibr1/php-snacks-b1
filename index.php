@@ -72,6 +72,7 @@
 		Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
 	-->
 	<h1>SANCK 1 - ELENCO PARTITE</h1>
+	<p><strong>Esempio ok login:</strong>  php-snacks-b1/?name=dani&email=brunodan@live.it&age=5</p>
 
 		<?php
 			$name = $_GET['name'];
