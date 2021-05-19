@@ -47,13 +47,9 @@
 				<li>
 					<h3>Partita <?php echo $i+1 ?></h3>
 					<div>
-						<span><?php echo $matches[$i]['squadra_casa']; ?></span>
-						<span>:</span>
-						<span><?php echo $matches[$i]['squadra_ospite']; ?></span>
+						<?php echo $matches[$i]['squadra_casa']; ?> - <?php echo $matches[$i]['squadra_ospite']; ?>
 						<span>|</span>
-						<span><?php echo $matches[$i]['punti_casa']; ?></span>
-						<span>:</span>
-						<span><?php echo $matches[$i]['punti_ospite']; ?></span>
+						<?php echo $matches[$i]['punti_casa']; ?> : <?php echo $matches[$i]['punti_ospite']; ?>
 					</div>				
 				</li>
 			<?php } ?>
@@ -82,18 +78,34 @@
 			if ( empty($name) || empty($email) || empty($age) )	{
 				echo "Errore, nessun parametro indicato";
 			}
-			else if ( 
-				(strlen($name) <= 3) ||
-				(strpos($email, '@') === false || strpos($email, '.' ) === false) ||
-				!is_numeric($age)
-				) 
-			{
+			// Check name
+			else if (strlen($name) <= 3) {
 				echo "Accesso negato ";
 			}
+			// Check email	
+			else if (strpos($email, '@') === false || strpos($email, '.' ) === false)  {
+				echo "Accesso negato ";
+			}
+			// Check age
+			else if (! is_numeric($age)) {
+				echo "Accesso negato ";
+			}
+			// Ok login
 			else {
 				echo "Accesso eseguito";
 			}
 		?>
 	</section>
+	
+<hr>
+
+	<!-- SNACK3 -->
+	<section id="snack3">
+	<!-- Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta -->
+
+
+
+	</section>
+
 </body>
 </html>
